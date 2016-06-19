@@ -201,7 +201,6 @@ resource "aws_autoscaling_group" "main" {
   max_size             = "${var.max_size}"
   desired_capacity     = "${var.desired_capacity}"
   termination_policies = ["OldestLaunchConfiguration", "Default"]
-  load_balancers       = ["${var.name}"]
 
   tag {
     key                 = "Name"
