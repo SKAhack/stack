@@ -55,6 +55,7 @@ resource "aws_elb" "main" {
   cross_zone_load_balancing = true
   subnets                   = ["${split(",", var.subnet_ids)}"]
   security_groups           = ["${split(",",var.security_groups)}"]
+  availability_zones        = ["${split(",",var.availability_zones)}"]
 
   idle_timeout                = 30
   connection_draining         = true
