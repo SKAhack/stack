@@ -44,6 +44,10 @@ variable "log_bucket" {
   description = "S3 bucket name to write ELB logs into"
 }
 
+variable "availability_zones" {
+  default = "ap-northeast-1a,ap-northeast-1c"
+}
+
 /**
  * Resources.
  */
