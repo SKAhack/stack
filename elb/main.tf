@@ -44,10 +44,6 @@ variable "log_bucket" {
   description = "S3 bucket name to write ELB logs into"
 }
 
-variable "availability_zones" {
-  default = "ap-northeast-1a"
-}
-
 /**
  * Resources.
  */
@@ -59,7 +55,6 @@ resource "aws_elb" "main" {
   cross_zone_load_balancing = false
   subnets                   = ["${split(",", var.subnet_ids)}"]
   security_groups           = ["${split(",",var.security_groups)}"]
-  availability_zones        = ["${split(",",var.availability_zones)}"]
 
   idle_timeout                = 30
   connection_draining         = true
