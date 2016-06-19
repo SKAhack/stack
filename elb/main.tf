@@ -45,7 +45,7 @@ variable "log_bucket" {
 }
 
 variable "availability_zones" {
-  default = "ap-northeast-1a,ap-northeast-1c"
+  default = "ap-northeast-1a"
 }
 
 /**
@@ -56,7 +56,7 @@ resource "aws_elb" "main" {
   name = "${var.name}"
 
   internal                  = true
-  cross_zone_load_balancing = true
+  cross_zone_load_balancing = false
   subnets                   = ["${split(",", var.subnet_ids)}"]
   security_groups           = ["${split(",",var.security_groups)}"]
   availability_zones        = ["${split(",",var.availability_zones)}"]
