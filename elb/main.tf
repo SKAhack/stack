@@ -52,7 +52,7 @@ resource "aws_elb" "main" {
   name = "${var.name}"
 
   internal                  = true
-  cross_zone_load_balancing = false
+  cross_zone_load_balancing = true
   subnets                   = ["${split(",", var.subnet_ids)}"]
   security_groups           = ["${split(",",var.security_groups)}"]
 
