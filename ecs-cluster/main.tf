@@ -71,7 +71,7 @@ variable "instance_type" {
 
 variable "instance_ebs_optimized" {
   description = "When set to true the instance will be launched with EBS optimized turned on"
-  default     = false
+  default     = true
 }
 
 variable "min_size" {
