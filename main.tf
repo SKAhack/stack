@@ -77,7 +77,7 @@ variable "ecs_instance_type" {
 
 variable "ecs_instance_ebs_optimized" {
   description = "ebs optimize or not cluster instances"
-  default     = true
+  default     = false
 }
 
 variable "ecs_min_size" {
